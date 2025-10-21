@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Room" load_steps=3 format=3 uid="uid://ctfnou718wqca"]
+
+[ext_resource type="Script" uid="uid://di4a7yrek1tp2" path="res://room.gd" id="1_8oge7"]
+[ext_resource type="Script" uid="uid://ihl5j4d7bqen" path="res://item.gd" id="2_e7eio"]
+
+[resource]
+script = ExtResource("1_8oge7")
+name = "Kitchen"
+default_description = "It is a Kitchen. That is pretty cool when you think about it."
+metadata/_custom_type_script = "uid://di4a7yrek1tp2"

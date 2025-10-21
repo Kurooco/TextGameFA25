@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="TextGame25"
+run/main_scene="uid://bs6ih0rgcf6oi"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
