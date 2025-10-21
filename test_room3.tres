@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Room" load_steps=3 format=3 uid="uid://mxrdbr0scm2k"]
+
+[ext_resource type="Script" uid="uid://ihl5j4d7bqen" path="res://item.gd" id="1_x77my"]
+[ext_resource type="Script" uid="uid://di4a7yrek1tp2" path="res://room.gd" id="2_w0fku"]
+
+[resource]
+script = ExtResource("2_w0fku")
+adjacent_rooms = Array[String](["res://test_room2.tres"])
+name = "Outside"
+default_description = "It is so nice outside! How nice!"
+metadata/_custom_type_script = "uid://di4a7yrek1tp2"

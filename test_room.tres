@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_8oge7")
+adjacent_rooms = Array[String](["res://test_room2.tres"])
 name = "Kitchen"
 default_description = "It is a Kitchen. That is pretty cool when you think about it."
 metadata/_custom_type_script = "uid://di4a7yrek1tp2"

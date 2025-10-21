@@ -27,7 +27,7 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.1
 
-[node name="UserInput" type="TextEdit" parent="VBoxContainer/HBoxContainer"]
+[node name="UserInput" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -39,4 +39,5 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Submit"
 
+[connection signal="text_submitted" from="VBoxContainer/HBoxContainer/UserInput" to="." method="_on_user_input_text_submitted"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Submit" to="." method="_on_submit_pressed"]

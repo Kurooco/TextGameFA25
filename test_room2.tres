@@ -1,12 +1,11 @@
-[gd_resource type="Resource" script_class="Room" load_steps=4 format=3 uid="uid://cibo05fcqn4hq"]
+[gd_resource type="Resource" script_class="Room" load_steps=3 format=3 uid="uid://cibo05fcqn4hq"]
 
 [ext_resource type="Script" uid="uid://di4a7yrek1tp2" path="res://room.gd" id="1_5ppp7"]
 [ext_resource type="Script" uid="uid://ihl5j4d7bqen" path="res://item.gd" id="2_1kfkc"]
-[ext_resource type="Resource" uid="uid://ctfnou718wqca" path="res://test_room.tres" id="2_i4gcv"]
 
 [resource]
 script = ExtResource("1_5ppp7")
-adjacent_rooms = Array[ExtResource("1_5ppp7")]([ExtResource("2_i4gcv")])
+adjacent_rooms = Array[String](["res://test_room.tres", "res://test_room3.tres"])
 name = "Dining Room"
 default_description = "Wow, cool place, huh? I wonder if people actually eat here."
 metadata/_custom_type_script = "uid://di4a7yrek1tp2"
