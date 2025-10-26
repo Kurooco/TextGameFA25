@@ -1,13 +1,12 @@
 extends Describable
 class_name Room
 
-## WARNING: DEPENDENCY LOOPS. FIX ASAP.
 @export var adjacent_rooms : Array[String]
 @export var items : Array[Item]
 
 func is_room_nearby(room:String) -> bool:
 	for r in adjacent_rooms:
-		print(room.to_lower() + ", " + load(r).name.to_lower())
+		print("-"+room.to_lower() + ", " + load(r).name.to_lower())
 		if(room.to_lower() == load(r).name.to_lower()):
 			return true
 	return false
