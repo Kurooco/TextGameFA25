@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmvaal26j6w5y"]
+
+[ext_resource type="StyleBox" uid="uid://drfje3r7aphnr" path="res://art/styles/button.tres" id="1_5t0el"]
+[ext_resource type="Script" uid="uid://cwi25xyaae0qs" path="res://option_button.gd" id="2_gybep"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5t0el"]
+bg_color = Color(0.999993, 0.5230409, 0.54583126, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.33018112, 0, 0.12129449, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.21960784)
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="Theme" id="Theme_sdvet"]
+Button/styles/disabled = ExtResource("1_5t0el")
+Button/styles/focus = ExtResource("1_5t0el")
+Button/styles/hover = SubResource("StyleBoxFlat_5t0el")
+Button/styles/normal = ExtResource("1_5t0el")
+Button/styles/pressed = ExtResource("1_5t0el")
+
+[node name="OptionButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+theme = SubResource("Theme_sdvet")
+text = "This is a test"
+script = ExtResource("2_gybep")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

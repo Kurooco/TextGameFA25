@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="DisplayCard" load_steps=4 format=3 uid="uid://byb4x8d6l0nnh"]
+
+[ext_resource type="Script" uid="uid://dghj0x8kiagub" path="res://link.gd" id="1_x7yfb"]
+[ext_resource type="Script" uid="uid://c032ttp4qelp0" path="res://display_card.gd" id="2_2qvve"]
+
+[sub_resource type="Resource" id="Resource_woeqj"]
+script = ExtResource("1_x7yfb")
+description = "Wow."
+destination = "res://cards/test.tres"
+metadata/_custom_type_script = "uid://dghj0x8kiagub"
+
+[resource]
+script = ExtResource("2_2qvve")
+title = "Wow, so text, very game. Wow."
+description = "Wow. So description."
+options = Array[ExtResource("1_x7yfb")]([SubResource("Resource_woeqj")])
+metadata/_custom_type_script = "uid://c032ttp4qelp0"
