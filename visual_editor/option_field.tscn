@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw5e4pvyl0jcb"]
+
+[ext_resource type="Script" uid="uid://8mf4mielwln5" path="res://visual_editor/option_field.gd" id="1_w5srj"]
+
+[node name="OptionField" type="HBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+script = ExtResource("1_w5srj")
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "X"
+
+[node name="Text" type="LineEdit" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+placeholder_text = "Option Title"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="text_changed" from="Text" to="." method="_on_text_text_changed"]

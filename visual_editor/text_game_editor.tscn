@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpgp0foekakcc"]
+[gd_scene load_steps=3 format=3 uid="uid://dpgp0foekakcc"]
 
-[ext_resource type="Script" uid="uid://b2iy81ubjyd3n" path="res://text_game_editor.gd" id="1_kylf6"]
-[ext_resource type="Script" uid="uid://oq003aunoulc" path="res://manager.gd" id="1_xg4sv"]
-[ext_resource type="PackedScene" uid="uid://doa1cghi67nq" path="res://room.tscn" id="2_xg4sv"]
+[ext_resource type="Script" uid="uid://oq003aunoulc" path="res://visual_editor/manager.gd" id="1_blaki"]
+[ext_resource type="Script" uid="uid://b2iy81ubjyd3n" path="res://visual_editor/text_game_editor.gd" id="2_j1md6"]
 
 [node name="Manager" type="Control"]
 layout_mode = 3
@@ -11,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_xg4sv")
+script = ExtResource("1_blaki")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -40,31 +39,13 @@ layout_mode = 2
 size_flags_vertical = 3
 right_disconnects = true
 connections = Array[Dictionary]([{
-"from_node": &"Room",
-"from_port": 1,
+"from_node": &"",
+"from_port": 0,
 "keep_alive": true,
-"to_node": &"Room2",
+"to_node": &"",
 "to_port": 0
 }])
-script = ExtResource("1_kylf6")
-
-[node name="Room" parent="VBoxContainer/TextGameEditor" instance=ExtResource("2_xg4sv")]
-layout_mode = 0
-offset_left = 54.0
-offset_top = 142.0
-offset_right = 354.0
-offset_bottom = 442.0
-position_offset = Vector2(54, 142)
-title = "Dining Room"
-
-[node name="Room2" parent="VBoxContainer/TextGameEditor" instance=ExtResource("2_xg4sv")]
-layout_mode = 0
-offset_left = 510.0
-offset_top = 132.0
-offset_right = 810.0
-offset_bottom = 432.0
-position_offset = Vector2(510, 132)
-title = "Kitchen"
+script = ExtResource("2_j1md6")
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="connection_request" from="VBoxContainer/TextGameEditor" to="VBoxContainer/TextGameEditor" method="_on_connection_request"]
