@@ -4,6 +4,9 @@ signal removed
 var current_text = ""
 var slot : int
 
+func _ready():
+	current_text = $Text.text
+
 func _on_button_pressed():
 	removed.emit()
 

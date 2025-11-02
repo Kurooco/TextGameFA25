@@ -5,7 +5,7 @@ extends Control
 @onready var options = $PanelContainer/MarginContainer/VBoxContainer/Options
 
 func _ready():
-	set_display(load("res://cards/test2.tres"))
+	set_display(load("res://cards/card0.tres"))
 
 func set_display(d : DisplayCard):
 	print_debug("reset display")
@@ -25,3 +25,7 @@ func set_display(d : DisplayCard):
 func remove_options():
 	for c in options.get_children():
 		options.remove_child(c)
+
+
+func _on_quit_pressed():
+	queue_free()

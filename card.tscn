@@ -1,8 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqil5bw6uks4f"]
+[gd_scene load_steps=7 format=3 uid="uid://cqil5bw6uks4f"]
 
 [ext_resource type="Script" uid="uid://b0m3nj1wkyr5h" path="res://card.gd" id="1_kikvd"]
 [ext_resource type="PackedScene" uid="uid://bmvaal26j6w5y" path="res://option_button.tscn" id="2_q5obu"]
 [ext_resource type="Script" uid="uid://dghj0x8kiagub" path="res://link.gd" id="3_e484p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e484p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5obu"]
+bg_color = Color(0.024266379, 0.02617071, 0.0917035, 1)
 
 [sub_resource type="Resource" id="Resource_fpac0"]
 script = ExtResource("3_e484p")
@@ -19,6 +24,16 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kikvd")
 
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 971.0
+offset_top = 6.0
+offset_right = 1075.5
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e484p")
+text = "Quit"
+
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -32,6 +47,7 @@ offset_right = 495.5
 offset_bottom = 260.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_q5obu")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
@@ -60,7 +76,10 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
 size_flags_stretch_ratio = 1.21
+theme_override_constants/separation = 10
 
 [node name="OptionButton" parent="PanelContainer/MarginContainer/VBoxContainer/Options" instance=ExtResource("2_q5obu")]
 layout_mode = 2
 link = SubResource("Resource_fpac0")
+
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

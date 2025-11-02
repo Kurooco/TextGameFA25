@@ -37,16 +37,21 @@ text = "Save"
 [node name="TextGameEditor" type="GraphEdit" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+scroll_offset = Vector2(0, -50)
 right_disconnects = true
-connections = Array[Dictionary]([{
-"from_node": &"",
-"from_port": 0,
-"keep_alive": true,
-"to_node": &"",
-"to_port": 0
-}])
 script = ExtResource("2_j1md6")
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="AddCard" type="Button" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Add Card"
+
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Save" to="." method="_on_save_pressed"]
 [connection signal="connection_request" from="VBoxContainer/TextGameEditor" to="VBoxContainer/TextGameEditor" method="_on_connection_request"]
 [connection signal="disconnection_request" from="VBoxContainer/TextGameEditor" to="VBoxContainer/TextGameEditor" method="_on_disconnection_request"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/AddCard" to="." method="_on_add_card_pressed"]

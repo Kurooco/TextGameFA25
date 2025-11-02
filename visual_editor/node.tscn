@@ -70,4 +70,5 @@ layout_mode = 2
 text = "+ Option"
 
 [connection signal="text_changed" from="Title" to="." method="_on_title_text_changed"]
+[connection signal="text_changed" from="Description" to="." method="_on_description_text_changed"]
 [connection signal="pressed" from="AddOption" to="." method="_on_add_option_pressed"]

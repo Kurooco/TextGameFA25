@@ -15,17 +15,20 @@ func _ready():
 		node.path = card_path+file
 		cards.append(node)
 		add_child(node)
+		node.position_offset = card.position
 		node.option_removed.connect(remove_connections_to_port.bind(node.name))
 	
 	await get_tree().physics_frame
+	
 	# Connect
 	for card in cards:
 		for link in card.options:
 			for other_card in cards:
 				if link.destination == other_card.path:
 					var from_port = card.get_port_number(link.destination)
+					print(str(from_port)+", "+link.description)
 					connect_node(card.name, from_port, other_card.name, 0)
-					
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
@@ -52,11 +55,41 @@ func remove_connections_to_port(port: int, node: String):
 
 func save():
 	# example
-	var c : DisplayCard = DisplayCard.new()
+	"""var c : DisplayCard = DisplayCard.new()
 	c.description = "Hi there, folks."
-	ResourceSaver.save(c, card_path+"new.tres")
+	ResourceSaver.save(c, card_path+"new.tres")"""
 	
 	# create resources
 	var new_cards = []
+	var paths = []
+	var ind = 0
 	for node in cards:
 		var new_card := DisplayCard.new()
+		new_card.description = node.description
+		new_card.title = node.card_title
+		new_card.position = node.position_offset
+		new_cards.append(new_card)
+		paths.append(card_path+"card"+str(ind)+".tres")
+		ind += 1
+		
+	# get names
+	var names = []
+	for node in cards:
+		names.append(node.name)
+	
+	# connect
+	for connection in connections:
+		print(connection)
+		var link = Link.new()
+		var start_card_ind = names.find(connection["from_node"])
+		var end_card_ind = names.find(connection["to_node"])
+		link.destination = paths[end_card_ind]
+		link.description = cards[start_card_ind].get_link_description(connection["from_port"])
+		if(link.description != ""):
+			new_cards[start_card_ind].options.append(link)
+		
+	# save resources
+	ind = 0
+	for card in new_cards:
+		ResourceSaver.save(card, paths[ind])
+		ind += 1
