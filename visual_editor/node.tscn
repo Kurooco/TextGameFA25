@@ -64,6 +64,7 @@ custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_vertical = 3
 placeholder_text = "Description"
+wrap_mode = 1
 
 [node name="AddOption" type="Button" parent="."]
 layout_mode = 2

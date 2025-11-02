@@ -42,22 +42,20 @@ func _on_disconnection_request(from_node, from_port, to_node, to_port):
 	disconnect_node(from_node, from_port, to_node, to_port)
 
 func remove_connections_to_port(port: int, node: String):
-	print("remove: "+node+", "+str(port))
 	for c in connections:
 		if(c["from_node"] == node):
 			if(c["from_port"] == port):
-				print_debug("found!")
 				disconnect_node(c["from_node"], c["from_port"], c["to_node"], c["to_port"])
 			elif(c["from_port"] > port):
 				disconnect_node(c["from_node"], c["from_port"], c["to_node"], c["to_port"])
 				connect_node(c["from_node"], c["from_port"]-1, c["to_node"], c["to_port"])
-	print_debug(connections)
 
 func save():
 	# example
 	"""var c : DisplayCard = DisplayCard.new()
 	c.description = "Hi there, folks."
 	ResourceSaver.save(c, card_path+"new.tres")"""
+	clear_all()
 	
 	# create resources
 	var new_cards = []
@@ -93,3 +91,19 @@ func save():
 	for card in new_cards:
 		ResourceSaver.save(card, paths[ind])
 		ind += 1
+
+
+func _on_delete_nodes_request(nodes):
+	for node_name in nodes:
+		for child in get_children():
+			if(child.name == node_name):
+				var ports = child.ports
+				for port in range(ports):
+					remove_connections_to_port(0, child.name)
+				cards.erase(child)
+				child.queue_free()
+				return
+
+func clear_all():
+	for file in DirAccess.get_files_at(card_path):
+		DirAccess.remove_absolute(card_path+file)

@@ -15,4 +15,6 @@ func _on_save_pressed():
 func _on_add_card_pressed():
 	var new_card = load("res://visual_editor/node.tscn").instantiate()
 	text_game_editor.add_child(new_card)
+	var zoom = text_game_editor.zoom
+	new_card.position_offset = text_game_editor.scroll_offset/zoom + Vector2((size.x/2)/zoom, (size.y/2)/zoom)
 	text_game_editor.cards.append(new_card)

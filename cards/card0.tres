@@ -1,16 +1,21 @@
-[gd_resource type="Resource" script_class="DisplayCard" load_steps=4 format=3]
+[gd_resource type="Resource" script_class="DisplayCard" load_steps=5 format=3]
 
 [ext_resource type="Script" path="res://link.gd" id="1_10lgo"]
 [ext_resource type="Script" path="res://display_card.gd" id="2_udxgx"]
 
 [sub_resource type="Resource" id="Resource_10lgo"]
 script = ExtResource("1_10lgo")
-description = "Okay"
+description = "Sit down"
+destination = "res://cards/card1.tres"
+
+[sub_resource type="Resource" id="Resource_udxgx"]
+script = ExtResource("1_10lgo")
+description = "Talk to bob"
 destination = "res://cards/card2.tres"
 
 [resource]
 script = ExtResource("2_udxgx")
-title = "Don't mind me"
-description = "Hi there, folks."
-options = Array[ExtResource("1_10lgo")]([SubResource("Resource_10lgo")])
-position = Vector2(440, 400)
+title = "Home"
+description = "This is just the beginning"
+options = Array[ExtResource("1_10lgo")]([SubResource("Resource_10lgo"), SubResource("Resource_udxgx")])
+position = Vector2(100, 380)

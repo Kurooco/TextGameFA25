@@ -52,5 +52,6 @@ text = "Add Card"
 [connection signal="pressed" from="VBoxContainer/TopMenu/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/TopMenu/Save" to="." method="_on_save_pressed"]
 [connection signal="connection_request" from="VBoxContainer/TextGameEditor" to="VBoxContainer/TextGameEditor" method="_on_connection_request"]
+[connection signal="delete_nodes_request" from="VBoxContainer/TextGameEditor" to="VBoxContainer/TextGameEditor" method="_on_delete_nodes_request"]
 [connection signal="disconnection_request" from="VBoxContainer/TextGameEditor" to="VBoxContainer/TextGameEditor" method="_on_disconnection_request"]
 [connection signal="pressed" from="VBoxContainer/BottomMenu/AddCard" to="." method="_on_add_card_pressed"]

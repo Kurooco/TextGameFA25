@@ -1,8 +1,8 @@
 extends Control
 
-@onready var title = $PanelContainer/MarginContainer/VBoxContainer/Title
-@onready var description = $PanelContainer/MarginContainer/VBoxContainer/Description
-@onready var options = $PanelContainer/MarginContainer/VBoxContainer/Options
+@onready var title = $PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Title
+@onready var description = $PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Description
+@onready var options = $PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Options
 
 func _ready():
 	set_display(load("res://cards/card0.tres"))

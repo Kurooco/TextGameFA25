@@ -1,19 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://cqil5bw6uks4f"]
+[gd_scene load_steps=9 format=3 uid="uid://cqil5bw6uks4f"]
 
 [ext_resource type="Script" uid="uid://b0m3nj1wkyr5h" path="res://card.gd" id="1_kikvd"]
+[ext_resource type="Texture2D" uid="uid://cmm0nx2lwaq3a" path="res://art/testbackground2.png" id="2_fpac0"]
 [ext_resource type="PackedScene" uid="uid://bmvaal26j6w5y" path="res://option_button.tscn" id="2_q5obu"]
 [ext_resource type="Script" uid="uid://dghj0x8kiagub" path="res://link.gd" id="3_e484p"]
+[ext_resource type="Texture2D" uid="uid://x3rybu7phy3h" path="res://art/testbackground.png" id="4_e484p"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e484p"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5obu"]
-bg_color = Color(0.024266379, 0.02617071, 0.0917035, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1i5pp"]
+texture = ExtResource("2_fpac0")
 
 [sub_resource type="Resource" id="Resource_fpac0"]
 script = ExtResource("3_e484p")
 description = "Nice car!"
 destination = "res://cards/test2.tres"
 metadata/_custom_type_script = "uid://dghj0x8kiagub"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e484p"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -24,30 +26,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kikvd")
 
-[node name="Quit" type="Button" parent="."]
-layout_mode = 0
-offset_left = 971.0
-offset_top = 6.0
-offset_right = 1075.5
-offset_bottom = 67.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e484p")
-text = "Quit"
-
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -495.5
-offset_top = -260.0
-offset_right = 495.5
-offset_bottom = 260.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_q5obu")
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_1i5pp")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
@@ -56,30 +43,55 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+
+[node name="Title" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "This is a description"
 horizontal_alignment = 1
 
-[node name="Description" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Description" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 autowrap_mode = 2
 
-[node name="Options" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Options" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
 size_flags_stretch_ratio = 1.21
-theme_override_constants/separation = 10
+theme_override_constants/separation = 20
 
-[node name="OptionButton" parent="PanelContainer/MarginContainer/VBoxContainer/Options" instance=ExtResource("2_q5obu")]
+[node name="OptionButton" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Options" instance=ExtResource("2_q5obu")]
 layout_mode = 2
 link = SubResource("Resource_fpac0")
 
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+texture = ExtResource("4_e484p")
+
+[node name="Quit" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer2"]
+z_index = 2
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e484p")
+text = "Quit"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer2/Quit" to="." method="_on_quit_pressed"]

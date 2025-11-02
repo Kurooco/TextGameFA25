@@ -5,6 +5,7 @@ extends GraphNode
 @export var options : Array[Link]
 @export var option_fields : Array[Node]
 var path : String
+var ports = 0
 
 signal option_removed(slot:int)
 
@@ -51,12 +52,14 @@ func add_option() -> Node:
 	option_fields.append(new_option)
 	add_child(new_option)
 	set_slot_enabled_right(get_children().size()-1, true)
+	ports += 1
 	return new_option
 
 func remove_slot(slot: Node):
 	option_removed.emit(slot.slot)
 	option_fields.erase(slot)
 	set_slot_enabled_right(get_output_port_count()-1, false)
+	ports -= 1
 	slot.queue_free()
 
 
