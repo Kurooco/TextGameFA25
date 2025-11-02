@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="DisplayCard" load_steps=5 format=3 uid="uid://brmrx7deoxb03"]
+[gd_resource type="Resource" script_class="DisplayCard" load_steps=5 format=3]
 
-[ext_resource type="Script" uid="uid://dghj0x8kiagub" path="res://link.gd" id="1_rxsxw"]
-[ext_resource type="Script" uid="uid://c032ttp4qelp0" path="res://display_card.gd" id="2_b3ue4"]
+[ext_resource type="Script" path="res://link.gd" id="1_rxsxw"]
+[ext_resource type="Script" path="res://display_card.gd" id="2_b3ue4"]
 
 [sub_resource type="Resource" id="Resource_rxsxw"]
 script = ExtResource("1_rxsxw")
@@ -17,4 +17,4 @@ destination = "res://cards/card0.tres"
 script = ExtResource("2_b3ue4")
 title = "Give it to me"
 options = Array[ExtResource("1_rxsxw")]([SubResource("Resource_rxsxw"), SubResource("Resource_b3ue4")])
-position = Vector2(900, -60)
+position = Vector2(820, 0)

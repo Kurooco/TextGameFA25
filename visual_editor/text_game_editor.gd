@@ -25,7 +25,7 @@ func _ready():
 		for link in card.options:
 			for other_card in cards:
 				if link.destination == other_card.path:
-					var from_port = card.get_port_number(link.destination)
+					var from_port = card.get_port_number(link.description)
 					print(str(from_port)+", "+link.description)
 					connect_node(card.name, from_port, other_card.name, 0)
 

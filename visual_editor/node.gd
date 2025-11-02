@@ -23,11 +23,11 @@ func _on_title_text_changed(new_text):
 	title = new_text
 	card_title = new_text
 
-func get_port_number(card_path:String):
+func get_port_number(d:String):
 	var counter = 0
 	for i in options:
-		print_debug(card_path+", "+i.destination)
-		if(i.destination == card_path):
+		print_debug(d+", "+i.destination)
+		if(i.description == d):
 			return counter
 		counter += 1
 	return -1

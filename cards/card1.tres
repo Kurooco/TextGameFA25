@@ -1,16 +1,16 @@
-[gd_resource type="Resource" script_class="DisplayCard" load_steps=5 format=3 uid="uid://d1owqm430ui0w"]
+[gd_resource type="Resource" script_class="DisplayCard" load_steps=5 format=3]
 
-[ext_resource type="Script" uid="uid://dghj0x8kiagub" path="res://link.gd" id="1_thgi6"]
-[ext_resource type="Script" uid="uid://c032ttp4qelp0" path="res://display_card.gd" id="2_exbke"]
+[ext_resource type="Script" path="res://link.gd" id="1_thgi6"]
+[ext_resource type="Script" path="res://display_card.gd" id="2_exbke"]
 
 [sub_resource type="Resource" id="Resource_thgi6"]
 script = ExtResource("1_thgi6")
-description = "No"
+description = "This just goes to the same place!"
 destination = "res://cards/card0.tres"
 
 [sub_resource type="Resource" id="Resource_exbke"]
 script = ExtResource("1_thgi6")
-description = "This just goes to the same place!"
+description = "Okay"
 destination = "res://cards/card0.tres"
 
 [resource]
