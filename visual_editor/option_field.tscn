@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://8mf4mielwln5" path="res://visual_editor/option_field.gd" id="1_w5srj"]
 
 [node name="OptionField" type="HBoxContainer"]
-offset_right = 40.0
+offset_right = 219.0
 offset_bottom = 40.0
 size_flags_horizontal = 3
 script = ExtResource("1_w5srj")

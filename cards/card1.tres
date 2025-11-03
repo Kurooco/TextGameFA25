@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://link.gd" id="1_thgi6"]
 [ext_resource type="Script" path="res://display_card.gd" id="2_exbke"]
 
-[sub_resource type="Resource" id="Resource_c3jp3"]
+[sub_resource type="Resource" id="Resource_thgi6"]
 script = ExtResource("1_thgi6")
 description = ">"
 destination = "res://cards/card0.tres"
@@ -11,5 +11,5 @@ destination = "res://cards/card0.tres"
 [resource]
 script = ExtResource("2_exbke")
 description = "You sit down. It feels nice to sit down."
-options = Array[ExtResource("1_thgi6")]([SubResource("Resource_c3jp3")])
+options = Array[ExtResource("1_thgi6")]([SubResource("Resource_thgi6")])
 position = Vector2(520, 580)

@@ -16,6 +16,6 @@ destination = "res://cards/card2.tres"
 [resource]
 script = ExtResource("2_udxgx")
 title = "Home"
-description = "This is just the beginning"
+description = "This is just the beginning."
 options = Array[ExtResource("1_10lgo")]([SubResource("Resource_10lgo"), SubResource("Resource_udxgx")])
 position = Vector2(100, 380)

@@ -33,10 +33,8 @@ func _ready():
 func _process(_delta):
 	pass
 
-
 func _on_connection_request(from_node, from_port, to_node, to_port):
 	connect_node(from_node, from_port, to_node, to_port)
-
 
 func _on_disconnection_request(from_node, from_port, to_node, to_port):
 	disconnect_node(from_node, from_port, to_node, to_port)
@@ -91,7 +89,6 @@ func save():
 	for card in new_cards:
 		ResourceSaver.save(card, paths[ind])
 		ind += 1
-
 
 func _on_delete_nodes_request(nodes):
 	for node_name in nodes:

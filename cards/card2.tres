@@ -3,13 +3,13 @@
 [ext_resource type="Script" path="res://link.gd" id="1_rxsxw"]
 [ext_resource type="Script" path="res://display_card.gd" id="2_b3ue4"]
 
-[sub_resource type="Resource" id="Resource_cps30"]
+[sub_resource type="Resource" id="Resource_rxsxw"]
 script = ExtResource("1_rxsxw")
 description = ">"
 destination = "res://cards/card0.tres"
 
 [resource]
 script = ExtResource("2_b3ue4")
-description = "You speak with Bob. Bob doesn't seem to care about what you are saying."
-options = Array[ExtResource("1_rxsxw")]([SubResource("Resource_cps30")])
-position = Vector2(520, 220)
+description = "You speak with Bob. Bob doesn't seem to care about what you are saying. You wave your hand in front of Bob's face. Still no responce from Bob. You proceed to grab Bob by the shoulders and stare him dead in the eye. Bob stares back, but his gaze is vacant. Finally, you give up and conclude that Bob does not wish to talk right now."
+options = Array[ExtResource("1_rxsxw")]([SubResource("Resource_rxsxw")])
+position = Vector2(700, 120)
