@@ -1,25 +1,63 @@
-[gd_scene load_steps=2 format=3 uid="uid://dw5e4pvyl0jcb"]
+[gd_scene load_steps=4 format=3 uid="uid://dw5e4pvyl0jcb"]
 
 [ext_resource type="Script" uid="uid://8mf4mielwln5" path="res://visual_editor/option_field.gd" id="1_w5srj"]
 
-[node name="OptionField" type="HBoxContainer"]
-offset_right = 219.0
-offset_bottom = 40.0
-size_flags_horizontal = 3
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ppscu"]
+bg_color = Color(0.5333229, 0.5469229, 0.55590945, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w5srj"]
+bg_color = Color(1, 0.22274706, 0.227902, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="PanelContainer" type="PanelContainer"]
+offset_right = 118.0
+offset_bottom = 35.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ppscu")
 script = ExtResource("1_w5srj")
 
-[node name="Button" type="Button" parent="."]
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OptionField" type="HBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 1
+
+[node name="XButton" type="Button" parent="VBoxContainer2/OptionField"]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_w5srj")
 text = "X"
 
-[node name="Text" type="LineEdit" parent="."]
+[node name="Text" type="LineEdit" parent="VBoxContainer2/OptionField"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 5.0
 placeholder_text = "Option Title"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="text_changed" from="Text" to="." method="_on_text_text_changed"]
+[node name="ToggleButton" type="Button" parent="VBoxContainer2/OptionField"]
+layout_mode = 2
+text = "V"
+
+[node name="OptionManager" type="VBoxContainer" parent="VBoxContainer2"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer2/OptionManager"]
+layout_mode = 2
+text = "+"
+
+[connection signal="pressed" from="VBoxContainer2/OptionField/XButton" to="." method="_on_x_button_pressed"]
+[connection signal="text_changed" from="VBoxContainer2/OptionField/Text" to="VBoxContainer2/OptionField" method="_on_text_text_changed"]
+[connection signal="pressed" from="VBoxContainer2/OptionField/ToggleButton" to="." method="_on_toggle_button_pressed"]

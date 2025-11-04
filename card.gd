@@ -3,8 +3,16 @@ extends Control
 @onready var title = $PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Title
 @onready var description = $PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Description
 @onready var options = $PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Options
+var vars = {"cool": 5, "nice": "yeah"}
+var test = 5
 
 func _ready():
+	var e = Expression.new()
+	e.parse("vars['nice'] == 'y'", ["vars"])
+	if(not e.has_execute_failed()):
+		print(e.execute([vars]))
+	else:
+		print("Something went wrong.")
 	set_display(load("res://cards/card0.tres"))
 
 func set_display(d : DisplayCard):

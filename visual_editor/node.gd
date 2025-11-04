@@ -16,7 +16,7 @@ func _ready():
 	$Description.text = description
 	for i in options:
 		var option = add_option()
-		option.get_node("Text").text = i.description
+		option.text_line.text = i.description
 		option.current_text = i.description
 	update_ports()
 

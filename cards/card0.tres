@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="DisplayCard" load_steps=5 format=3]
+[gd_resource type="Resource" script_class="DisplayCard" load_steps=5 format=3 uid="uid://dd0wejtfn4mrk"]
 
-[ext_resource type="Script" path="res://link.gd" id="1_10lgo"]
-[ext_resource type="Script" path="res://display_card.gd" id="2_udxgx"]
+[ext_resource type="Script" uid="uid://dghj0x8kiagub" path="res://link.gd" id="1_10lgo"]
+[ext_resource type="Script" uid="uid://c032ttp4qelp0" path="res://display_card.gd" id="2_udxgx"]
 
 [sub_resource type="Resource" id="Resource_10lgo"]
 script = ExtResource("1_10lgo")
