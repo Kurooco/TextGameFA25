@@ -3,7 +3,7 @@ extends Control
 @onready var title = $PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Title
 @onready var description = $PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Description
 @onready var options = $PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Options
-var vars = {"cool": 5, "nice": "yeah", "sit": "no"}
+var vars = {"cool": 0, "nice": "yeah", "sit": false}
 var test = 5
 
 func _ready():
@@ -25,8 +25,6 @@ func set_display(d : DisplayCard):
 			e.parse(condition, vars.keys())
 			if(not e.has_execute_failed() && !e.execute(vars.values())):
 				continue
-			else:
-				print("Something went wrong.")
 		var button = load("res://option_button.tscn").instantiate()
 		button.link = link
 		button.option_selected.connect(set_display)
@@ -35,8 +33,15 @@ func set_display(d : DisplayCard):
 
 
 func set_variables(link: Link):
-	for v in link.set_vars.keys():
-		vars[v] = link.set_vars[v]
+	for v in link.set_vars:
+		var val = v.value
+		match v.operator:
+			0:
+				vars[v.var_name] = val
+			6:
+				vars[v.var_name] += val
+			7:
+				vars[v.var_name] -= val
 
 
 func remove_options():
