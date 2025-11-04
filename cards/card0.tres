@@ -7,11 +7,15 @@
 script = ExtResource("1_10lgo")
 description = "Sit down"
 destination = "res://cards/card1.tres"
+set_vars = Dictionary[String, String]({
+"sit": "yes"
+})
 
 [sub_resource type="Resource" id="Resource_udxgx"]
 script = ExtResource("1_10lgo")
 description = "Talk to bob"
 destination = "res://cards/card2.tres"
+condition = "sit == \"yes\""
 
 [resource]
 script = ExtResource("2_udxgx")

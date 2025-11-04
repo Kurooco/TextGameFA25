@@ -3,16 +3,10 @@ extends Control
 @onready var title = $PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Title
 @onready var description = $PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Description
 @onready var options = $PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/Options
-var vars = {"cool": 5, "nice": "yeah"}
+var vars = {"cool": 5, "nice": "yeah", "sit": "no"}
 var test = 5
 
 func _ready():
-	var e = Expression.new()
-	e.parse("vars['nice'] == 'y'", ["vars"])
-	if(not e.has_execute_failed()):
-		print(e.execute([vars]))
-	else:
-		print("Something went wrong.")
 	set_display(load("res://cards/card0.tres"))
 
 func set_display(d : DisplayCard):
@@ -25,11 +19,26 @@ func set_display(d : DisplayCard):
 	description.text = d.description
 	remove_options()
 	for link in d.options:
+		var condition = link.condition
+		if(!condition.is_empty()):
+			var e = Expression.new()
+			e.parse(condition, vars.keys())
+			if(not e.has_execute_failed() && !e.execute(vars.values())):
+				continue
+			else:
+				print("Something went wrong.")
 		var button = load("res://option_button.tscn").instantiate()
 		button.link = link
 		button.option_selected.connect(set_display)
+		button.variables_set.connect(set_variables)
 		options.add_child(button)
-	
+
+
+func set_variables(link: Link):
+	for v in link.set_vars.keys():
+		vars[v] = link.set_vars[v]
+
+
 func remove_options():
 	for c in options.get_children():
 		options.remove_child(c)

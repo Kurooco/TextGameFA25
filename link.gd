@@ -3,5 +3,5 @@ class_name Link
 
 @export var description : String
 @export var destination : String
-@export var conditions : Array[String]
-@export var vars : Dictionary[String, String]
+@export var condition : String
+@export var set_vars : Dictionary[String, String]
