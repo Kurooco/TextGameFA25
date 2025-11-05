@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Link" load_steps=3 format=3 uid="uid://bpqqujyyf8i43"]
+
+[ext_resource type="Script" uid="uid://dghj0x8kiagub" path="res://link.gd" id="1_8sofj"]
+[ext_resource type="Script" uid="uid://dsoknhdw20uug" path="res://variable_manipulation.gd" id="2_p0fcq"]
+
+[resource]
+script = ExtResource("1_8sofj")
+set_vars = Array[ExtResource("2_p0fcq")]([null])
+metadata/_custom_type_script = "uid://dghj0x8kiagub"

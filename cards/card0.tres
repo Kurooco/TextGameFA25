@@ -1,32 +1,23 @@
-[gd_resource type="Resource" script_class="DisplayCard" load_steps=7 format=3 uid="uid://dd0wejtfn4mrk"]
+[gd_resource type="Resource" script_class="DisplayCard" load_steps=6 format=3]
 
-[ext_resource type="Script" uid="uid://dghj0x8kiagub" path="res://link.gd" id="1_10lgo"]
-[ext_resource type="Script" uid="uid://dsoknhdw20uug" path="res://variable_manipulation.gd" id="2_kjuh5"]
-[ext_resource type="Script" uid="uid://c032ttp4qelp0" path="res://display_card.gd" id="2_udxgx"]
-
-[sub_resource type="Resource" id="Resource_kjuh5"]
-script = ExtResource("2_kjuh5")
-type_name = 2
-var_name = "cool"
-operator = 6
-value = 1
-metadata/_custom_type_script = "uid://dsoknhdw20uug"
-
-[sub_resource type="Resource" id="Resource_10lgo"]
-script = ExtResource("1_10lgo")
-description = "Sit down"
-destination = "res://cards/card1.tres"
-set_vars = Array[ExtResource("2_kjuh5")]([SubResource("Resource_kjuh5")])
+[ext_resource type="Script" path="res://link.gd" id="1_10lgo"]
+[ext_resource type="Script" path="res://variable_manipulation.gd" id="2_kjuh5"]
+[ext_resource type="Script" path="res://display_card.gd" id="2_udxgx"]
 
 [sub_resource type="Resource" id="Resource_udxgx"]
+script = ExtResource("2_kjuh5")
+type_name = 4
+var_name = "nice"
+value = "no"
+
+[sub_resource type="Resource" id="Resource_kjuh5"]
 script = ExtResource("1_10lgo")
-description = "Talk to bob"
-destination = "res://cards/card2.tres"
-condition = "cool >= 1"
+description = "start"
+destination = "res://cards/card1.tres"
+set_vars = Array[ExtResource("2_kjuh5")]([SubResource("Resource_udxgx")])
 
 [resource]
 script = ExtResource("2_udxgx")
-title = "Home"
-description = "This is just the beginning."
-options = Array[ExtResource("1_10lgo")]([SubResource("Resource_10lgo"), SubResource("Resource_udxgx")])
-position = Vector2(100, 380)
+title = "nice"
+options = Array[ExtResource("1_10lgo")]([SubResource("Resource_kjuh5")])
+position = Vector2(540, 500)

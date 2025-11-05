@@ -1,7 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://dpgp0foekakcc"]
+[gd_scene load_steps=5 format=3 uid="uid://dpgp0foekakcc"]
 
 [ext_resource type="Script" uid="uid://oq003aunoulc" path="res://visual_editor/manager.gd" id="1_blaki"]
 [ext_resource type="Script" uid="uid://b2iy81ubjyd3n" path="res://visual_editor/text_game_editor.gd" id="2_j1md6"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_blaki"]
+device = -1
+ctrl_pressed = true
+keycode = 83
+
+[sub_resource type="Shortcut" id="Shortcut_j1md6"]
+events = [SubResource("InputEventKey_blaki")]
 
 [node name="Manager" type="Control"]
 layout_mode = 3
@@ -32,6 +40,7 @@ text = "Play"
 [node name="Save" type="Button" parent="VBoxContainer/TopMenu"]
 layout_mode = 2
 size_flags_horizontal = 3
+shortcut = SubResource("Shortcut_j1md6")
 text = "Save"
 
 [node name="TextGameEditor" type="GraphEdit" parent="VBoxContainer"]
@@ -48,6 +57,17 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Add Card"
+
+[node name="SaveIndicator" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 24.0
+offset_top = 488.0
+offset_right = 225.0
+offset_bottom = 584.0
+theme_override_colors/font_color = Color(1.025185e-05, 0.89629596, 0.25012344, 0.52156866)
+theme_override_font_sizes/font_size = 70
+text = "Saved"
 
 [connection signal="pressed" from="VBoxContainer/TopMenu/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/TopMenu/Save" to="." method="_on_save_pressed"]

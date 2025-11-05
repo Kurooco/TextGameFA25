@@ -10,6 +10,9 @@ func _on_play_pressed():
 
 func _on_save_pressed():
 	text_game_editor.save()
+	$SaveIndicator.show()
+	await get_tree().create_timer(2).timeout
+	$SaveIndicator.hide()
 
 
 func _on_add_card_pressed():

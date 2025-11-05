@@ -18,6 +18,8 @@ func _ready():
 		var option = add_option()
 		option.text_line.text = i.description
 		option.current_text = i.description
+		option.condition = i.condition
+		option.populate_var_manipulations(i.set_vars)
 	update_ports()
 
 func _on_title_text_changed(new_text):
@@ -35,6 +37,9 @@ func get_port_number(d:String):
 
 func get_link_description(port_number:int) -> String:
 	return option_fields[port_number].current_text
+
+func get_link_condition(port_number:int) -> String:
+	return option_fields[port_number].condition
 
 func get_link_variable_manipulations(port_number:int) -> Array:
 	return option_fields[port_number].get_variable_manipulations()

@@ -49,10 +49,6 @@ func remove_connections_to_port(port: int, node: String):
 				connect_node(c["from_node"], c["from_port"]-1, c["to_node"], c["to_port"])
 
 func save():
-	# example
-	"""var c : DisplayCard = DisplayCard.new()
-	c.description = "Hi there, folks."
-	ResourceSaver.save(c, card_path+"new.tres")"""
 	clear_all()
 	
 	# create resources
@@ -81,10 +77,12 @@ func save():
 		var end_card_ind = names.find(connection["to_node"])
 		link.destination = paths[end_card_ind]
 		link.description = cards[start_card_ind].get_link_description(connection["from_port"])
-		# Add variable manipulations
-		link.set_vars = cards[start_card_ind].get_variable_manipulations(connection["from_port"])
+		link.condition = cards[start_card_ind].get_link_condition(connection["from_port"])
+		link.set_vars = cards[start_card_ind].get_link_variable_manipulations(connection["from_port"])
 		if(link.description != ""):
 			new_cards[start_card_ind].options.append(link)
+		else:
+			print_debug("no description")
 		
 	# save resources
 	ind = 0
