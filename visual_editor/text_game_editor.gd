@@ -81,6 +81,8 @@ func save():
 		var end_card_ind = names.find(connection["to_node"])
 		link.destination = paths[end_card_ind]
 		link.description = cards[start_card_ind].get_link_description(connection["from_port"])
+		# Add variable manipulations
+		link.set_vars = cards[start_card_ind].get_variable_manipulations(connection["from_port"])
 		if(link.description != ""):
 			new_cards[start_card_ind].options.append(link)
 		

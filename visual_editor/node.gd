@@ -36,6 +36,9 @@ func get_port_number(d:String):
 func get_link_description(port_number:int) -> String:
 	return option_fields[port_number].current_text
 
+func get_link_variable_manipulations(port_number:int) -> Array:
+	return option_fields[port_number].get_variable_manipulations()
+
 func update_ports():
 	var num = get_children().size() - option_fields.size()
 	for i in range(num, get_children().size()):
