@@ -34,7 +34,7 @@ func set_display(d : DisplayCard):
 
 func set_variables(link: Link):
 	for v in link.set_vars:
-		var val = v.value
+		var val = type_convert(v.value, v.type_name)
 		match v.operator:
 			0:
 				vars[v.var_name] = val

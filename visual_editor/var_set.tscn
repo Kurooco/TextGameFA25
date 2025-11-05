@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgemjdujpaxie"]
+
+[ext_resource type="Script" uid="uid://r1ds0gtnn7ca" path="res://visual_editor/var_set.gd" id="1_b0k53"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rvrkh"]
+bg_color = Color(1, 0.3202034, 0.42551896, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b0k53"]
+bg_color = Color(0.8009087, 0, 0.029912684, 1)
+
+[node name="VarSet" type="PanelContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rvrkh")
+script = ExtResource("1_b0k53")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="XButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_b0k53")
+text = "X"
+
+[node name="Var" type="LineEdit" parent="HBoxContainer"]
+layout_mode = 2
+placeholder_text = "Var"
+
+[node name="Operator" type="OptionButton" parent="HBoxContainer"]
+layout_mode = 2
+item_count = 3
+popup/item_0/text = "="
+popup/item_0/id = 0
+popup/item_1/text = "+="
+popup/item_1/id = 6
+popup/item_2/text = "-="
+popup/item_2/id = 7
+
+[node name="Val" type="LineEdit" parent="HBoxContainer"]
+layout_mode = 2
+placeholder_text = "Val"
+
+[node name="Type" type="OptionButton" parent="HBoxContainer"]
+layout_mode = 2
+item_count = 3
+popup/item_0/text = "Int"
+popup/item_0/id = 2
+popup/item_1/text = "String"
+popup/item_1/id = 4
+popup/item_2/text = "Bool"
+popup/item_2/id = 1
+
+[connection signal="button_down" from="HBoxContainer/XButton" to="." method="_on_x_button_button_down"]
+[connection signal="text_changed" from="HBoxContainer/Var" to="." method="_on_var_text_changed"]
+[connection signal="item_selected" from="HBoxContainer/Operator" to="." method="_on_operator_item_selected"]
+[connection signal="text_changed" from="HBoxContainer/Val" to="." method="_on_val_text_changed"]
+[connection signal="item_selected" from="HBoxContainer/Type" to="." method="_on_type_item_selected"]

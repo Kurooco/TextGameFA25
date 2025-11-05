@@ -6,6 +6,7 @@
 
 [sub_resource type="Resource" id="Resource_kjuh5"]
 script = ExtResource("2_kjuh5")
+type_name = 2
 var_name = "cool"
 operator = 6
 value = 1
@@ -21,7 +22,7 @@ set_vars = Array[ExtResource("2_kjuh5")]([SubResource("Resource_kjuh5")])
 script = ExtResource("1_10lgo")
 description = "Talk to bob"
 destination = "res://cards/card2.tres"
-condition = "cool == 2"
+condition = "cool >= 1"
 
 [resource]
 script = ExtResource("2_udxgx")
