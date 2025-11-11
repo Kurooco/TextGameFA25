@@ -20,7 +20,7 @@ func _ready():
 		option.current_text = i.description
 		option.condition = i.condition
 		add_child(option)
-		option.populate_var_manipulations(i.set_vars)
+		option.populate(i.set_vars, i.signals)
 	update_ports()
 
 func _on_title_text_changed(new_text):
@@ -43,6 +43,9 @@ func get_link_condition(port_number:int) -> String:
 
 func get_link_variable_manipulations(port_number:int) -> Array:
 	return option_fields[port_number].get_variable_manipulations()
+
+func get_link_signals(port_number:int) -> Array:
+	return option_fields[port_number].get_signals()
 
 func update_ports():
 	var num = get_children().size() - option_fields.size()

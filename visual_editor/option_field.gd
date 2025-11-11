@@ -4,6 +4,7 @@ signal removed
 var current_text = ""
 var slot : int
 var var_lines = []
+var signal_lines = []
 var condition : String
 
 @onready var text_line = %Text
@@ -14,8 +15,8 @@ func _ready():
 	text_line.text = current_text
 	condition_line.text = condition
 
-func populate_var_manipulations(arr: Array[VariableManipulation]):
-	for v in arr:
+func populate(var_arr: Array[VariableManipulation], sig_arr: Array[String]):
+	for v in var_arr:
 		var var_line = load("res://visual_editor/var_set.tscn").instantiate()
 		var_line.var_name = v.var_name
 		var_line.operator = v.operator
@@ -24,7 +25,12 @@ func populate_var_manipulations(arr: Array[VariableManipulation]):
 		var_lines.append(var_line)
 		var_line.removed.connect(remove_var_line.bind(var_line))
 		option_manager.add_child(var_line)
-
+	for s in sig_arr:
+		var signal_line = load("res://visual_editor/signal_set.tscn").instantiate()
+		signal_line.signal_body = s
+		signal_lines.append(signal_line)
+		signal_line.removed.connect(remove_signal_line.bind(signal_line))
+		option_manager.add_child(signal_line)
 
 func _on_text_text_changed(new_text):
 	current_text = new_text
@@ -49,6 +55,11 @@ func get_variable_manipulations() -> Array[VariableManipulation]:
 		arr.append(v_man)
 	return arr
 
+func get_signals():
+	var arr = []
+	for line in signal_lines:
+		arr.append(line.signal_body)
+	return arr
 
 func _on_plus_button_pressed():
 	var var_line = load("res://visual_editor/var_set.tscn").instantiate()
@@ -60,6 +71,16 @@ func remove_var_line(var_line):
 	var_lines.erase(var_line)
 	var_line.queue_free()
 
+func remove_signal_line(signal_line):
+	signal_lines.erase(signal_line)
+	signal_line.queue_free()
 
 func _on_condition_text_changed(new_text):
 	condition = new_text
+
+
+func _on_plus_signal_button_pressed():
+	var signal_line = load("res://visual_editor/signal_set.tscn").instantiate()
+	signal_lines.append(signal_line)
+	signal_line.removed.connect(remove_signal_line.bind(signal_line))
+	option_manager.add_child(signal_line)

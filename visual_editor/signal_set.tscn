@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://vb8nw8sjmmgf"]
+
+[ext_resource type="Script" uid="uid://7hivf4my8qnk" path="res://visual_editor/signal_set.gd" id="1_a6npn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13i8p"]
+bg_color = Color(0.95880693, 0.40913582, 5.7756904e-07, 1)
+
+[node name="Panel" type="PanelContainer"]
+offset_left = 94.0
+offset_right = 94.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_13i8p")
+script = ExtResource("1_a6npn")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="XButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+text = "X"
+
+[node name="SignalSet" type="LineEdit" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Signal"
+
+[connection signal="pressed" from="HBoxContainer/XButton" to="." method="_on_x_button_pressed"]
+[connection signal="text_changed" from="HBoxContainer/SignalSet" to="." method="_on_signal_set_text_changed"]

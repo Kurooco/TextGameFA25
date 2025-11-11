@@ -76,6 +76,7 @@ func save():
 		link.description = cards[start_card_ind].get_link_description(connection["from_port"])
 		link.condition = cards[start_card_ind].get_link_condition(connection["from_port"])
 		link.set_vars = cards[start_card_ind].get_link_variable_manipulations(connection["from_port"])
+		link.signals = cards[start_card_ind].get_link_signals(connection["from_port"])
 		if(link.description != ""):
 			new_cards[start_card_ind].options.append(link)
 		
