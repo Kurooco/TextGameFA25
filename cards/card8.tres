@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="DisplayCard" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://link.gd" id="1_rfldx"]
+[ext_resource type="Script" path="res://variable_manipulation.gd" id="2_ki4yx"]
+[ext_resource type="Script" path="res://display_card.gd" id="3_g7pfr"]
+
+[sub_resource type="Resource" id="Resource_rfldx"]
+script = ExtResource("1_rfldx")
+description = "Yes! Yes! Yes!"
+destination = "res://cards/card9.tres"
+
+[resource]
+script = ExtResource("3_g7pfr")
+description = "Are you going to kick some ass?"
+options = Array[ExtResource("1_rfldx")]([SubResource("Resource_rfldx")])
+position = Vector2(980, 680)

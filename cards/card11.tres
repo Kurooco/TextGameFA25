@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DisplayCard" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://link.gd" id="1_v41p5"]
+[ext_resource type="Script" path="res://display_card.gd" id="2_ppc6m"]
+
+[resource]
+script = ExtResource("2_ppc6m")
+title = "You Win!"
+description = "The second sneeze is even more beautiful than the first. All of the people within a five-mile radius of you start to break into tears."
+position = Vector2(1660, 480)

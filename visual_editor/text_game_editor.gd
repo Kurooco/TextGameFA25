@@ -6,7 +6,6 @@ var cards : Array[Node]
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for file in DirAccess.get_files_at(card_path):
-		print(card_path+file)
 		var card : DisplayCard = load(card_path+file)
 		var node = load("res://visual_editor/node.tscn").instantiate()
 		node.card_title = card.title
@@ -26,7 +25,6 @@ func _ready():
 			for other_card in cards:
 				if link.destination == other_card.path:
 					var from_port = card.get_port_number(link.description)
-					print(str(from_port)+", "+link.description)
 					connect_node(card.name, from_port, other_card.name, 0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -71,7 +69,6 @@ func save():
 	
 	# connect
 	for connection in connections:
-		print(connection)
 		var link = Link.new()
 		var start_card_ind = names.find(connection["from_node"])
 		var end_card_ind = names.find(connection["to_node"])
@@ -81,8 +78,6 @@ func save():
 		link.set_vars = cards[start_card_ind].get_link_variable_manipulations(connection["from_port"])
 		if(link.description != ""):
 			new_cards[start_card_ind].options.append(link)
-		else:
-			print_debug("no description")
 		
 	# save resources
 	ind = 0

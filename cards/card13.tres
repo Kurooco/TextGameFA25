@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="DisplayCard" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://link.gd" id="1_4wach"]
+[ext_resource type="Script" path="res://variable_manipulation.gd" id="2_rfmik"]
+[ext_resource type="Script" path="res://display_card.gd" id="3_1wxum"]
+
+[sub_resource type="Resource" id="Resource_b1ysw"]
+script = ExtResource("1_4wach")
+description = "I don't know. What would you recommend?"
+destination = "res://cards/card14.tres"
+
+[resource]
+script = ExtResource("3_1wxum")
+description = "What will you do?"
+options = Array[ExtResource("1_4wach")]([SubResource("Resource_b1ysw")])
+position = Vector2(820, -200)

@@ -23,7 +23,7 @@ layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_b0k53")
 text = "X"
 
-[node name="Var" type="LineEdit" parent="HBoxContainer"]
+[node name="Var" type="LineEdit" parent="HBoxContainer" groups=["var_name"]]
 layout_mode = 2
 placeholder_text = "Var"
 

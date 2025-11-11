@@ -11,6 +11,6 @@ destination = "res://cards/card1.tres"
 
 [resource]
 script = ExtResource("2_b3ue4")
-title = "yes"
+description = "You eat the cake. It is so delicious that you start to cry. You now have enough energy to transform."
 options = Array[ExtResource("1_rxsxw")]([SubResource("Resource_b3ue4")])
-position = Vector2(80, 140)
+position = Vector2(-380, 40)

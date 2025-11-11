@@ -4,14 +4,14 @@ signal removed
 var current_text = ""
 var slot : int
 var var_lines = []
-var condition = ""
+var condition : String
 
 @onready var text_line = %Text
 @onready var option_manager = $VBoxContainer2/OptionManager
 @onready var condition_line = $VBoxContainer2/OptionManager/Condition
 
 func _ready():
-	current_text = text_line.text
+	text_line.text = current_text
 	condition_line.text = condition
 
 func populate_var_manipulations(arr: Array[VariableManipulation]):

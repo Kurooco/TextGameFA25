@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DisplayCard" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://link.gd" id="1_kja00"]
+[ext_resource type="Script" path="res://display_card.gd" id="2_orjlm"]
+
+[resource]
+script = ExtResource("2_orjlm")
+description = "Don't look at me!"
+position = Vector2(1180, -200)

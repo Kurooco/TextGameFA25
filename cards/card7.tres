@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="DisplayCard" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://link.gd" id="1_1ntt2"]
+[ext_resource type="Script" path="res://variable_manipulation.gd" id="2_1cqhg"]
+[ext_resource type="Script" path="res://display_card.gd" id="3_ssyv5"]
+
+[sub_resource type="Resource" id="Resource_1ntt2"]
+script = ExtResource("1_1ntt2")
+description = "No!"
+destination = "res://cards/card8.tres"
+
+[resource]
+script = ExtResource("3_ssyv5")
+description = "Are you still afraid?"
+options = Array[ExtResource("1_1ntt2")]([SubResource("Resource_1ntt2")])
+position = Vector2(606.45197, 593.8831)

@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cqil5bw6uks4f"]
+[gd_scene load_steps=10 format=3 uid="uid://cqil5bw6uks4f"]
 
 [ext_resource type="Script" uid="uid://b0m3nj1wkyr5h" path="res://card.gd" id="1_kikvd"]
 [ext_resource type="Texture2D" uid="uid://cmm0nx2lwaq3a" path="res://art/testbackground2.png" id="2_fpac0"]
 [ext_resource type="PackedScene" uid="uid://bmvaal26j6w5y" path="res://option_button.tscn" id="2_q5obu"]
 [ext_resource type="Script" uid="uid://dghj0x8kiagub" path="res://link.gd" id="3_e484p"]
 [ext_resource type="Texture2D" uid="uid://x3rybu7phy3h" path="res://art/testbackground.png" id="4_e484p"]
+[ext_resource type="Script" uid="uid://dsoknhdw20uug" path="res://variable_manipulation.gd" id="5_1i5pp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1i5pp"]
 texture = ExtResource("2_fpac0")

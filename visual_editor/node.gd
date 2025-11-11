@@ -16,9 +16,10 @@ func _ready():
 	$Description.text = description
 	for i in options:
 		var option = add_option()
-		option.text_line.text = i.description
+		option.current_text = i.description
 		option.current_text = i.description
 		option.condition = i.condition
+		add_child(option)
 		option.populate_var_manipulations(i.set_vars)
 	update_ports()
 
@@ -29,7 +30,6 @@ func _on_title_text_changed(new_text):
 func get_port_number(d:String):
 	var counter = 0
 	for i in options:
-		print_debug(d+", "+i.destination)
 		if(i.description == d):
 			return counter
 		counter += 1
@@ -51,15 +51,14 @@ func update_ports():
 
 
 func _on_add_option_pressed():
-	add_option()
+	add_child(add_option())
+	update_ports()
 	
 func add_option() -> Node:
 	var new_option = load("res://visual_editor/option_field.tscn").instantiate()
 	new_option.removed.connect(remove_slot.bind(new_option))
 	new_option.slot = get_output_port_count()
 	option_fields.append(new_option)
-	add_child(new_option)
-	set_slot_enabled_right(get_children().size()-1, true)
 	ports += 1
 	return new_option
 

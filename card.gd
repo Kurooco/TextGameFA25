@@ -7,6 +7,9 @@ var vars = {"cool": 0, "nice": "yeah", "sit": false}
 var test = 5
 
 func _ready():
+	for node in get_tree().get_nodes_in_group("var_name"):
+		vars[node.text] = null
+		print_debug(node.text)
 	set_display(load("res://cards/card0.tres"))
 
 func set_display(d : DisplayCard):
@@ -51,3 +54,6 @@ func remove_options():
 
 func _on_quit_pressed():
 	queue_free()
+
+
+	

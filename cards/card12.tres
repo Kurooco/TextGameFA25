@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DisplayCard" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://link.gd" id="1_5e6qw"]
+[ext_resource type="Script" path="res://display_card.gd" id="2_5x0va"]
+
+[resource]
+script = ExtResource("2_5x0va")
+title = "Game Over"
+description = "The sneeze could not be held in. It must be free."
+position = Vector2(1480, 160)

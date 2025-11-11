@@ -18,6 +18,7 @@ set_vars = Array[ExtResource("2_kjuh5")]([SubResource("Resource_udxgx")])
 
 [resource]
 script = ExtResource("2_udxgx")
-title = "nice"
+title = "This is a Game"
+description = "Please play the game"
 options = Array[ExtResource("1_10lgo")]([SubResource("Resource_kjuh5")])
-position = Vector2(540, 500)
+position = Vector2(-200, 720)
