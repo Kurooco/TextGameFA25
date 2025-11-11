@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="DisplayCard" load_steps=3 format=3]
+[gd_resource type="Resource" script_class="DisplayCard" load_steps=3 format=3 uid="uid://diqbiocgxmneg"]
 
-[ext_resource type="Script" path="res://link.gd" id="1_m00ss"]
-[ext_resource type="Script" path="res://display_card.gd" id="2_yhawm"]
+[ext_resource type="Script" uid="uid://dghj0x8kiagub" path="res://link.gd" id="1_m00ss"]
+[ext_resource type="Script" uid="uid://c032ttp4qelp0" path="res://display_card.gd" id="2_yhawm"]
 
 [resource]
 script = ExtResource("2_yhawm")
-title = "You Win!"
-description = "The second sneeze is even more beautiful than the first. All of the people within a five-mile radius of you start to break into tears."
-position = Vector2(1660, 480)
+title = "Game Over"
+description = "The sneeze could not be held in. It must be free."
+position = Vector2(1480, 160)

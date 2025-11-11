@@ -10,6 +10,7 @@ func _on_play_pressed():
 
 func _on_save_pressed():
 	text_game_editor.save()
+	$VBoxContainer/TopMenu/Play.disabled = true
 	$SaveIndicator.show()
 	await get_tree().create_timer(2).timeout
 	$SaveIndicator.hide()

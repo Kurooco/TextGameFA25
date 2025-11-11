@@ -6,11 +6,11 @@
 
 [sub_resource type="Resource" id="Resource_5x0va"]
 script = ExtResource("1_5e6qw")
-description = "I literally can't see you."
-destination = "res://cards/card16.tres"
+description = "ok"
+destination = "res://cards/card1.tres"
 
 [resource]
 script = ExtResource("2_5x0va")
-description = "Don't look at me!"
+description = "You eat the cake. It is so delicious that you start to cry. You now have enough energy to transform."
 options = Array[ExtResource("1_5e6qw")]([SubResource("Resource_5x0va")])
-position = Vector2(1180, -280)
+position = Vector2(-380, 40)

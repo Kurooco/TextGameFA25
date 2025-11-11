@@ -11,6 +11,7 @@ func _ready():
 		vars[node.text] = null
 		print_debug(node.text)
 	set_display(load("res://cards/card0.tres"))
+	SignalHandler.global_dict_signal.connect(handle_signals)
 
 func set_display(d : DisplayCard):
 	print_debug("reset display")
@@ -55,5 +56,7 @@ func remove_options():
 func _on_quit_pressed():
 	queue_free()
 
-
+func handle_signals(arg: Dictionary):
+	if("cool" in arg.keys()):
+		print_debug(arg["cool"])
 	

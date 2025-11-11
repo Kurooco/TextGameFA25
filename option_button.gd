@@ -9,6 +9,7 @@ func _ready():
 	text = link.description
 
 func _on_pressed():
-	print_debug("pressed")
+	for sig in link.signals:
+		SignalHandler.send_global_signal(sig)
 	variables_set.emit(link)
 	option_selected.emit(load(link.destination))

@@ -1,16 +1,10 @@
-[gd_resource type="Resource" script_class="DisplayCard" load_steps=5 format=3]
+[gd_resource type="Resource" script_class="DisplayCard" load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://link.gd" id="1_b7uwt"]
 [ext_resource type="Script" path="res://display_card.gd" id="2_fhb2d"]
-[ext_resource type="Script" path="res://variable_manipulation.gd" id="2_x4dyw"]
-
-[sub_resource type="Resource" id="Resource_fhb2d"]
-script = ExtResource("1_b7uwt")
-description = "Yes! Yes! Yes!"
-destination = "res://cards/card6.tres"
 
 [resource]
 script = ExtResource("2_fhb2d")
-description = "Are you going to kick some ass?"
-options = Array[ExtResource("1_b7uwt")]([SubResource("Resource_fhb2d")])
-position = Vector2(980, 680)
+title = "You Win!"
+description = "You go outside and show those people who's the greatest duck of all time."
+position = Vector2(1420, 700)

@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("3_u8rfr")
-title = "You Win!"
-description = "You go outside and show those people who's the greatest duck of all time."
-position = Vector2(1420, 700)
+title = "Game Over"
+description = "They don't believe you!!!"
+position = Vector2(420, -320)

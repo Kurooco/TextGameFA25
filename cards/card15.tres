@@ -1,21 +1,10 @@
-[gd_resource type="Resource" script_class="DisplayCard" load_steps=6 format=3]
+[gd_resource type="Resource" script_class="DisplayCard" load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://link.gd" id="1_yl5pn"]
 [ext_resource type="Script" path="res://display_card.gd" id="2_35bji"]
-[ext_resource type="Script" path="res://variable_manipulation.gd" id="2_qdor1"]
-
-[sub_resource type="Resource" id="Resource_2fttb"]
-script = ExtResource("1_yl5pn")
-description = "Hold in sneeze"
-destination = "res://cards/card2.tres"
-
-[sub_resource type="Resource" id="Resource_xo57y"]
-script = ExtResource("1_yl5pn")
-description = "Use sneeze to my advantage"
-destination = "res://cards/card8.tres"
 
 [resource]
 script = ExtResource("2_35bji")
-description = "You duck behind your fern, which seems to be oblivious to the seriousness of the situation. The people outside suddenly break through your door and start to search your home. You really need to sneeze."
-options = Array[ExtResource("1_yl5pn")]([SubResource("Resource_2fttb"), SubResource("Resource_xo57y")])
-position = Vector2(640, 280)
+title = "Game Over"
+description = "Whatever, this isn't going anywhere."
+position = Vector2(1520, -240)

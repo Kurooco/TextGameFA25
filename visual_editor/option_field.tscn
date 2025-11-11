@@ -51,7 +51,6 @@ layout_mode = 2
 text = "V"
 
 [node name="OptionManager" type="VBoxContainer" parent="VBoxContainer2"]
-visible = false
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
@@ -59,12 +58,21 @@ layout_mode = 2
 layout_mode = 2
 placeholder_text = "Condition"
 
-[node name="PlusButton" type="Button" parent="VBoxContainer2/OptionManager"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2/OptionManager"]
 layout_mode = 2
-text = "+ Set Var"
+
+[node name="PlusVarButton" type="Button" parent="VBoxContainer2/OptionManager/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "+ Var"
+
+[node name="PlusSignalButton" type="Button" parent="VBoxContainer2/OptionManager/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "+ Sig"
 
 [connection signal="pressed" from="VBoxContainer2/OptionField/XButton" to="." method="_on_x_button_pressed"]
 [connection signal="text_changed" from="VBoxContainer2/OptionField/Text" to="." method="_on_text_text_changed"]
 [connection signal="pressed" from="VBoxContainer2/OptionField/ToggleButton" to="." method="_on_toggle_button_pressed"]
 [connection signal="text_changed" from="VBoxContainer2/OptionManager/Condition" to="." method="_on_condition_text_changed"]
-[connection signal="pressed" from="VBoxContainer2/OptionManager/PlusButton" to="." method="_on_plus_button_pressed"]
+[connection signal="pressed" from="VBoxContainer2/OptionManager/HBoxContainer/PlusVarButton" to="." method="_on_plus_button_pressed"]

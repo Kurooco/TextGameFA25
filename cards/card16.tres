@@ -6,5 +6,5 @@
 [resource]
 script = ExtResource("2_ujdyq")
 title = "Game Over"
-description = "Whatever, this isn't going anywhere."
-position = Vector2(1520, -240)
+description = "You try to hold it in, but you let too much pressure build up and you let out a little squeak. One of the people hears you from an adjacent room and starts coming your way. There is no escape."
+position = Vector2(1080, 100)

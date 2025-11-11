@@ -18,7 +18,7 @@ metadata/_custom_type_script = "uid://dghj0x8kiagub"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e484p"]
 
-[node name="Control" type="Control"]
+[node name="Card" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

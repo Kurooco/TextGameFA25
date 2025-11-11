@@ -1,10 +1,16 @@
-[gd_resource type="Resource" script_class="DisplayCard" load_steps=3 format=3]
+[gd_resource type="Resource" script_class="DisplayCard" load_steps=5 format=3]
 
 [ext_resource type="Script" path="res://link.gd" id="1_0es0x"]
 [ext_resource type="Script" path="res://display_card.gd" id="2_1k6y2"]
+[ext_resource type="Script" path="res://variable_manipulation.gd" id="2_uj1ve"]
+
+[sub_resource type="Resource" id="Resource_1k6y2"]
+script = ExtResource("1_0es0x")
+description = "I don't know. What would you recommend?"
+destination = "res://cards/card11.tres"
 
 [resource]
 script = ExtResource("2_1k6y2")
-title = "Game Over"
-description = "The sneeze could not be held in. It must be free."
-position = Vector2(1480, 160)
+description = "What will you do?"
+options = Array[ExtResource("1_0es0x")]([SubResource("Resource_1k6y2")])
+position = Vector2(820, -200)

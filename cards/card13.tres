@@ -1,16 +1,16 @@
 [gd_resource type="Resource" script_class="DisplayCard" load_steps=5 format=3]
 
 [ext_resource type="Script" path="res://link.gd" id="1_4wach"]
-[ext_resource type="Script" path="res://variable_manipulation.gd" id="2_rfmik"]
+[ext_resource type="Script" path="res://variable_manipulation.gd" id="2_4wach"]
 [ext_resource type="Script" path="res://display_card.gd" id="3_1wxum"]
 
-[sub_resource type="Resource" id="Resource_4wach"]
+[sub_resource type="Resource" id="Resource_rfmik"]
 script = ExtResource("1_4wach")
-description = "ok"
-destination = "res://cards/card1.tres"
+description = "Crap, I was hoping they left."
+destination = "res://cards/card10.tres"
 
 [resource]
 script = ExtResource("3_1wxum")
-description = "You eat the cake. It is so delicious that you start to cry. You now have enough energy to transform."
-options = Array[ExtResource("1_4wach")]([SubResource("Resource_4wach")])
-position = Vector2(-380, 40)
+description = "You peak out of the living room window. It looks like they are still outside."
+options = Array[ExtResource("1_4wach")]([SubResource("Resource_rfmik")])
+position = Vector2(520, -40)

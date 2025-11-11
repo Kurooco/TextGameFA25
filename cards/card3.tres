@@ -4,13 +4,13 @@
 [ext_resource type="Script" path="res://variable_manipulation.gd" id="2_uyh6b"]
 [ext_resource type="Script" path="res://display_card.gd" id="2_x1801"]
 
-[sub_resource type="Resource" id="Resource_nseyk"]
+[sub_resource type="Resource" id="Resource_x1801"]
 script = ExtResource("1_n0g2w")
-description = "Yes! Yes! Yes!"
+description = "No!"
 destination = "res://cards/card4.tres"
 
 [resource]
 script = ExtResource("2_x1801")
-description = "You have transformed into a giant duck! No one can hurt you now!!!"
-options = Array[ExtResource("1_n0g2w")]([SubResource("Resource_nseyk")])
-position = Vector2(280, 500)
+description = "Are you still afraid?"
+options = Array[ExtResource("1_n0g2w")]([SubResource("Resource_x1801")])
+position = Vector2(606.45197, 593.8831)
