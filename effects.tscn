@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3afvgxy0hn11"]
+
+[ext_resource type="Script" uid="uid://bqrjfncasioc1" path="res://effects.gd" id="1_oaf0w"]
+[ext_resource type="Texture2D" uid="uid://dv4yaa8bjvli0" path="res://icon.svg" id="2_nwluy"]
+
+[node name="Effects" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oaf0w")
+
+[node name="Character" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 879.0
+offset_top = 659.0
+offset_right = 1007.0
+offset_bottom = 787.0
+texture = ExtResource("2_nwluy")

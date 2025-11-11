@@ -55,8 +55,8 @@ func get_variable_manipulations() -> Array[VariableManipulation]:
 		arr.append(v_man)
 	return arr
 
-func get_signals():
-	var arr = []
+func get_signals() -> Array[String]:
+	var arr : Array[String] = []
 	for line in signal_lines:
 		arr.append(line.signal_body)
 	return arr
