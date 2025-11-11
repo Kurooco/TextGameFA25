@@ -1,9 +1,16 @@
-[gd_resource type="Resource" script_class="DisplayCard" load_steps=3 format=3]
+[gd_resource type="Resource" script_class="DisplayCard" load_steps=5 format=3]
 
 [ext_resource type="Script" path="res://link.gd" id="1_kja00"]
+[ext_resource type="Script" path="res://variable_manipulation.gd" id="2_cehjx"]
 [ext_resource type="Script" path="res://display_card.gd" id="2_orjlm"]
+
+[sub_resource type="Resource" id="Resource_es2yb"]
+script = ExtResource("1_kja00")
+description = "Crap, I was hoping they left."
+destination = "res://cards/card11.tres"
 
 [resource]
 script = ExtResource("2_orjlm")
-description = "Don't look at me!"
-position = Vector2(1180, -200)
+description = "You peak out of the living room window. It looks like they are still outside."
+options = Array[ExtResource("1_kja00")]([SubResource("Resource_es2yb")])
+position = Vector2(520, -40)

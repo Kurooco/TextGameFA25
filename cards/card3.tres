@@ -6,11 +6,11 @@
 
 [sub_resource type="Resource" id="Resource_nseyk"]
 script = ExtResource("1_n0g2w")
-description = "Crap, I was hoping they left."
-destination = "res://cards/card13.tres"
+description = "Yes! Yes! Yes!"
+destination = "res://cards/card4.tres"
 
 [resource]
 script = ExtResource("2_x1801")
-description = "You peak out of the living room window. It looks like they are still outside."
+description = "You have transformed into a giant duck! No one can hurt you now!!!"
 options = Array[ExtResource("1_n0g2w")]([SubResource("Resource_nseyk")])
-position = Vector2(520, -40)
+position = Vector2(280, 500)

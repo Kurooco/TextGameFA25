@@ -1,21 +1,10 @@
-[gd_resource type="Resource" script_class="DisplayCard" load_steps=6 format=3]
+[gd_resource type="Resource" script_class="DisplayCard" load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://link.gd" id="1_0es0x"]
 [ext_resource type="Script" path="res://display_card.gd" id="2_1k6y2"]
-[ext_resource type="Script" path="res://variable_manipulation.gd" id="2_uj1ve"]
-
-[sub_resource type="Resource" id="Resource_1k6y2"]
-script = ExtResource("1_0es0x")
-description = "True sneezes know no boundries! Release the sneeze!"
-destination = "res://cards/card11.tres"
-
-[sub_resource type="Resource" id="Resource_uj1ve"]
-script = ExtResource("1_0es0x")
-description = "Hold in the sneeze. We mush strive for modesty and discipline in our sneezes."
-destination = "res://cards/card12.tres"
 
 [resource]
 script = ExtResource("2_1k6y2")
-description = "You sneeze in a beautiful way. The people inside your home hear your beautiful sneeze and are overcome with such overwhelming catharsis that they need to take a breather outside. As they leave, you feel another sneeze coming on, but you wonder if sneezing a second time is overkill."
-options = Array[ExtResource("1_0es0x")]([SubResource("Resource_1k6y2"), SubResource("Resource_uj1ve")])
-position = Vector2(1120, 380)
+title = "Game Over"
+description = "The sneeze could not be held in. It must be free."
+position = Vector2(1480, 160)

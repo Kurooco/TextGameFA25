@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DisplayCard" load_steps=9 format=3]
+[gd_resource type="Resource" script_class="DisplayCard" load_steps=10 format=3]
 
 [ext_resource type="Script" path="res://link.gd" id="1_thgi6"]
 [ext_resource type="Script" path="res://variable_manipulation.gd" id="2_c3jp3"]
@@ -13,28 +13,33 @@ value = true
 [sub_resource type="Resource" id="Resource_c3jp3"]
 script = ExtResource("1_thgi6")
 description = "I eat some cake from the fridge."
-destination = "res://cards/card2.tres"
+destination = "res://cards/card13.tres"
 condition = "cake != true"
 set_vars = Array[ExtResource("2_c3jp3")]([SubResource("Resource_exbke")])
 
 [sub_resource type="Resource" id="Resource_sx8kg"]
 script = ExtResource("1_thgi6")
 description = "I peak out the window"
-destination = "res://cards/card3.tres"
+destination = "res://cards/card14.tres"
 
 [sub_resource type="Resource" id="Resource_ha1c4"]
 script = ExtResource("1_thgi6")
 description = "I hide behind my house plant"
-destination = "res://cards/card4.tres"
+destination = "res://cards/card15.tres"
 
 [sub_resource type="Resource" id="Resource_6cys4"]
 script = ExtResource("1_thgi6")
 description = "Transform!!!"
-destination = "res://cards/card6.tres"
+destination = "res://cards/card3.tres"
 condition = "cake == true"
+
+[sub_resource type="Resource" id="Resource_sy7re"]
+script = ExtResource("1_thgi6")
+description = "I say that I'm sick"
+destination = "res://cards/card7.tres"
 
 [resource]
 script = ExtResource("2_exbke")
-description = "You are in the kitchen. Two people are waiting outside ready to arrest you. What do you do?"
-options = Array[ExtResource("1_thgi6")]([SubResource("Resource_c3jp3"), SubResource("Resource_sx8kg"), SubResource("Resource_ha1c4"), SubResource("Resource_6cys4")])
-position = Vector2(40, -40)
+description = "You are in the kitchen. Two people are waiting outside, ready to take you to a party that you really don't feel like going to. What do you do?"
+options = Array[ExtResource("1_thgi6")]([SubResource("Resource_c3jp3"), SubResource("Resource_sx8kg"), SubResource("Resource_ha1c4"), SubResource("Resource_6cys4"), SubResource("Resource_sy7re")])
+position = Vector2(0, -300)

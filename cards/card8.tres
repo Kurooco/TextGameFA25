@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DisplayCard" load_steps=5 format=3]
+[gd_resource type="Resource" script_class="DisplayCard" load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://link.gd" id="1_rfldx"]
 [ext_resource type="Script" path="res://variable_manipulation.gd" id="2_ki4yx"]
@@ -6,11 +6,16 @@
 
 [sub_resource type="Resource" id="Resource_rfldx"]
 script = ExtResource("1_rfldx")
-description = "Yes! Yes! Yes!"
+description = "True sneezes know no boundries! Release the sneeze!"
 destination = "res://cards/card9.tres"
+
+[sub_resource type="Resource" id="Resource_ki4yx"]
+script = ExtResource("1_rfldx")
+description = "Hold in the sneeze. We mush strive for modesty and discipline in our sneezes."
+destination = "res://cards/card10.tres"
 
 [resource]
 script = ExtResource("3_g7pfr")
-description = "Are you going to kick some ass?"
-options = Array[ExtResource("1_rfldx")]([SubResource("Resource_rfldx")])
-position = Vector2(980, 680)
+description = "You sneeze in a beautiful way. The people inside your home hear your beautiful sneeze and are overcome with such overwhelming catharsis that they need to take a breather outside. As they leave, you feel another sneeze coming on, but you wonder if sneezing a second time is overkill."
+options = Array[ExtResource("1_rfldx")]([SubResource("Resource_rfldx"), SubResource("Resource_ki4yx")])
+position = Vector2(1120, 380)

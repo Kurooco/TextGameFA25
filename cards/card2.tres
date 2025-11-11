@@ -1,16 +1,10 @@
-[gd_resource type="Resource" script_class="DisplayCard" load_steps=5 format=3]
+[gd_resource type="Resource" script_class="DisplayCard" load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://link.gd" id="1_rxsxw"]
 [ext_resource type="Script" path="res://display_card.gd" id="2_b3ue4"]
-[ext_resource type="Script" path="res://variable_manipulation.gd" id="2_cps30"]
-
-[sub_resource type="Resource" id="Resource_b3ue4"]
-script = ExtResource("1_rxsxw")
-description = "ok"
-destination = "res://cards/card1.tres"
 
 [resource]
 script = ExtResource("2_b3ue4")
-description = "You eat the cake. It is so delicious that you start to cry. You now have enough energy to transform."
-options = Array[ExtResource("1_rxsxw")]([SubResource("Resource_b3ue4")])
-position = Vector2(-380, 40)
+title = "Game Over"
+description = "You try to hold it in, but you let too much pressure build up and you let out a little squeak. One of the people hears you from an adjacent room and starts coming your way. There is no escape."
+position = Vector2(1080, 100)

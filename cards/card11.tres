@@ -1,10 +1,16 @@
-[gd_resource type="Resource" script_class="DisplayCard" load_steps=3 format=3]
+[gd_resource type="Resource" script_class="DisplayCard" load_steps=5 format=3]
 
 [ext_resource type="Script" path="res://link.gd" id="1_v41p5"]
+[ext_resource type="Script" path="res://variable_manipulation.gd" id="2_ja16m"]
 [ext_resource type="Script" path="res://display_card.gd" id="2_ppc6m"]
+
+[sub_resource type="Resource" id="Resource_ppc6m"]
+script = ExtResource("1_v41p5")
+description = "I don't know. What would you recommend?"
+destination = "res://cards/card12.tres"
 
 [resource]
 script = ExtResource("2_ppc6m")
-title = "You Win!"
-description = "The second sneeze is even more beautiful than the first. All of the people within a five-mile radius of you start to break into tears."
-position = Vector2(1660, 480)
+description = "What will you do?"
+options = Array[ExtResource("1_v41p5")]([SubResource("Resource_ppc6m")])
+position = Vector2(820, -200)
